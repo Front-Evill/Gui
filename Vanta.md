@@ -536,36 +536,6 @@ Icon = "https://www.roblox.com/asset/?id=YOUR_ASSET_ID"
 Icon = "YOUR_ASSET_ID"
 ```
 
-## Project structure
-
-```
-src/Vanta/
-  init.lua      entry point, composes all modules into the returned library
-  Window.lua    window creation, theming, tabs, top bar controls
-  Tab.lua       tab object and section creation
-  Section.lua   all interactive elements
-  Notify.lua    notification system
-  Dialog.lua    modal dialogs
-  Config.lua    save/load system
-  Acrylic.lua   translucent background effect
-  Theme.lua     color resolution and built-in presets
-  Icons.lua     icon name resolution and the Lucide id table
-  Keybinds.lua  keybind string/enum conversion
-  Utils.lua     shared helpers (instance creation, dragging, tweening, tooltips)
-dist/main.lua   bundled, single-file build produced from src/
-build.py        the bundler
-```
-
-The source is organized as real Roblox ModuleScripts using `require`, so it
-can be synced into Studio with Rojo (`default.project.json` is included) for
-local development and testing.
-
-## Building from source
-
-```
-python3 build.py
-```
-
 This reads every file under `src/Vanta`, resolves the `require` calls
 between them, and writes a single self-contained `dist/main.lua`. The GitHub
 Actions workflow in `.github/workflows/release.yml` runs this automatically
