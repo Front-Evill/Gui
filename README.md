@@ -1,5 +1,4 @@
 # Vanta
-
 Vanta is a UI library for Roblox scripts. It gives you a complete window
 system — tabs, sections, and a full set of interactive elements — so you can
 build a clean script hub without writing UI code from scratch.
@@ -21,17 +20,14 @@ build a clean script hub without writing UI code from scratch.
 - **Theming** — a set of built-in color presets, or generate a theme from
   any accent color.
 
-## Get started
+## [GET Start](https://vanta-obf.netlify.app/dashboard)
 
 The easiest way to grab the library and a ready-to-use loader script is
 through the dashboard:
 
-**[vanta-obf.netlify.app/dashboard](https://vanta-obf.netlify.app/dashboard)**
-
 Everything you need to load Vanta into your script is available there.
 
 ## Documentation
-
 Full API reference, every element's options, and code examples live in
 **[Vanta.md](./Vanta.md)**. It covers:
 
@@ -41,34 +37,6 @@ Full API reference, every element's options, and code examples live in
 - Theming and icons
 - Project structure and building from source
 
-## Example
-
-A complete, ready-to-run example that demonstrates every feature across
-multiple tabs is included at [`Vanta_Example.lua`](./Vanta_Example.lua).
-
-```lua
-local Window = Library:Window({
-	Title = "Vanta Hub",
-	Theme = "Purple",
-	Acrylic = true,
-})
-
-local Tabs = Window:AddTab({
-	Main = { Name = "Main", Icon = "home" },
-	Settings = { Name = "Settings", Icon = "settings" },
-})
-
-local Section = Tabs.Main:AddSection({ Name = "General" })
-
-Section:AddToggle({
-	Name = "Enable feature",
-	Default = false,
-	Callback = function(value)
-		print("toggled:", value)
-	end,
-})
-```
-
 ## Sources & credits
 
 - Icons — [Lucide](https://lucide.dev), MIT licensed.
@@ -76,5 +44,4 @@ Section:AddToggle({
 - Built and maintained by **FrontEvill**.
 
 ## Support
-
 For questions, issues, or the latest builds, use the dashboard linked above.
