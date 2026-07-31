@@ -1,0 +1,12 @@
+{
+  "name": "Vanta",
+  "tree": {
+    "$className": "DataModel",
+    "ReplicatedStorage": {
+      "$className": "ReplicatedStorage",
+      "Vanta": {
+        "$path": "src/Vanta"
+      }
+    }
+  }
+}
