@@ -1,0 +1,41 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+concurrency:
+  group: release
+  cancel-in-progress: true
+
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: python3 build.py
+
+      - run: test -s dist/main.lua
+
+      - run: test -s dist/InterfaceManager.lua
+
+      - run: test -s dist/SaveManager.lua
+
+      - uses: softprops/action-gh-release@v2
+        with:
+          tag_name: latest
+          name: latest
+          make_latest: true
+          files: |
+            dist/main.lua
+            dist/InterfaceManager.lua
+            dist/SaveManager.lua
