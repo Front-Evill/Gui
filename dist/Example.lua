@@ -1,7 +1,3 @@
--- Vanta — full usage example
--- Loads the library and the two add-ons, then builds a window that
--- exercises every element and feature the library offers.
-
 local Library = loadstring(game:HttpGet("https://github.com/Front-Evill/Library/releases/latest/download/main.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://github.com/Front-Evill/Library/releases/latest/download/InterfaceManager.lua"))()
 local SaveManager = loadstring(game:HttpGet("https://github.com/Front-Evill/Library/releases/latest/download/SaveManager.lua"))()
@@ -19,20 +15,12 @@ local Window = Library:Window({
 	MinimizeKey = Enum.KeyCode.RightControl,
 })
 
---------------------------------------------------------------------
--- Tabs (AddTapHover inserts a labeled divider between tab groups)
---------------------------------------------------------------------
-
 local MainTab = Window:AddTab({ Name = "Main", Icon = "home" })
 local ToolsTab = Window:AddTab({ Name = "Tools", Icon = "wrench" })
 
 Window:AddTapHover({ Name = "Extra" })
 
 local SettingsTab = Window:AddTab({ Name = "Settings", Icon = "settings" })
-
---------------------------------------------------------------------
--- Main tab: every basic element
---------------------------------------------------------------------
 
 local GeneralSection = MainTab:AddSection({ Name = "General", Icon = "star" })
 
@@ -45,7 +33,6 @@ GeneralSection:AddButton({
 	end,
 })
 
--- Two AddButton calls back-to-back automatically share one row
 GeneralSection:AddButton({
 	Name = "Save preset",
 	Icon = "save",
@@ -109,10 +96,6 @@ GeneralSection:AddColorPicker({
 	Callback = function(presetName) end,
 })
 
---------------------------------------------------------------------
--- Tools tab: input / keybind / paragraph / code / links / progress
---------------------------------------------------------------------
-
 local InputSection = ToolsTab:AddSection({ Name = "Input", Icon = "keyboard" })
 
 InputSection:AddInput("PlayerName", {
@@ -157,16 +140,11 @@ local progress = InfoSection:AddProgressBar({
 })
 progress:Set(0.65)
 
--- Card-style grid of quick actions
 local Combat = ToolsTab:AddSectionsBox({ Name = "Combat", Image = "sword", Description = "Combat related tools" })
 local Movement = ToolsTab:AddSectionsBox({ Name = "Movement", Image = "move", Description = "Speed and jump tweaks" })
 
 Combat:AddButton({ Name = "Attack", Icon = "sword", Callback = function() end })
 Movement:AddSlider("Speed", { Default = 16, Min = 8, Max = 100 })
-
---------------------------------------------------------------------
--- Settings tab: interface + config management add-ons
---------------------------------------------------------------------
 
 InterfaceManager:SetLibrary(Window)
 InterfaceManager:SetFolder("VantaDemo")
@@ -175,10 +153,6 @@ InterfaceManager:CreateInterfaceSection(SettingsTab)
 SaveManager:SetLibrary(Window)
 SaveManager:SetFolder("VantaDemo/configs")
 SaveManager:CreateConfigSection(SettingsTab)
-
---------------------------------------------------------------------
--- Notifications and dialogs
---------------------------------------------------------------------
 
 Window:Notify({
 	Title = "Welcome",
