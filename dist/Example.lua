@@ -9,7 +9,7 @@ local SaveManager = loadstring(game:HttpGet("https://github.com/Front-Evill/Libr
 local Window = Library:Window({
 	Title = "Vanta Demo",
 	SubTitle = "by FrontEvill",
-	Theme = "Purple",           -- preset name, "Random"/"All", or a custom { Accent = ... } table
+	Theme = "All",           -- preset name, "Random"/"All", or a custom { Accent = ... } table
 	Size = UDim2.fromOffset(620, 420),
 	Search = true,               -- searchable tab list
 	Resize = true,                -- drag-to-resize from the corner
