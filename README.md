@@ -20,7 +20,7 @@ build a clean script hub without writing UI code from scratch.
 - **Theming** — a set of built-in color presets, or generate a theme from
   any accent color.
 
-## [GET Start](https://devlyx-obf.netlify.app/dashboard)
+## [GET Start](https://devlyx.netlify.app/gui)
 
 The easiest way to grab the library and a ready-to-use loader script is
 through the dashboard:
