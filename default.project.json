@@ -1,0 +1,12 @@
+{
+  "name": "Devlyx",
+  "tree": {
+    "$className": "DataModel",
+    "ReplicatedStorage": {
+      "$className": "ReplicatedStorage",
+      "Devlyx": {
+        "$path": "src/Devlyx"
+      }
+    }
+  }
+}
